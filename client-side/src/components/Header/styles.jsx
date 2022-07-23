@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   background: rgb(0, 0, 0);
   display: flex;
+  border-bottom: 1px solid rgb(40,40,40);
+
 
   height: 80px;
 `;
@@ -27,12 +29,15 @@ export const LogoLink = styled(Link)`
 `;
 
 export const HeaderLink = styled(Link)`
+  border: 1px solid rgb(40,40,40);
+
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(14, 14, 14);
-  width: 200px;
-  height: 50px;
+  background-color: rgba(14, 14, 14);
+  flex: 1;
+  height: 40px;
   border-radius: 10px;
   font-size: 22px;
   color: white;
@@ -40,12 +45,12 @@ export const HeaderLink = styled(Link)`
 
   transition: all 0.2s ease;
   &:hover {
-    width: 210px;
+    flex: 1.1;
   }
 `;
 
 export const HeaderLinkWrapper = styled.div`
-  width: 200px;
+  width: ${(props) => props.width? `${String(props.width) + "px"}` : "200px"};
 `;
 
 export const Div1 = styled.div`
@@ -59,8 +64,6 @@ export const Div2 = styled.div`
   flex: 3;
   display: flex;
   align-items: center;
-
-  justify-content: space-around;
 `;
 export const Div3 = styled.div`
   display: flex;
@@ -86,12 +89,21 @@ export const ContactDropDown = styled.button`
 // Social Icons
 
 export const SocialIcons = styled.a`
+display: flex;
   color: white;
-  padding: 4px;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
 
   transition: all 0.1s ease;
   &:hover {
-    transform: scale(1.2);
+    width: 40px;
     cursor: pointer;
   }
+`;
+
+export const MenuWrapper = styled.div`
+display: flex;
+flex-direction: column;
+padding: 10px;
 `;

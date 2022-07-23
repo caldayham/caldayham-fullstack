@@ -10,6 +10,7 @@ import {
   HeaderLinkWrapper,
   LogoLink,
   SocialIcons,
+  MenuWrapper
 } from "./styles";
 
 import LedgesSVG from "../../local-assets/ledges-svg";
@@ -25,31 +26,39 @@ const Header = () => (
     </Div1>
     <Div2>
       <HeaderLinkWrapper>
-        <HeaderLink to="/about">Overview</HeaderLink>
-      </HeaderLinkWrapper>
-      <HeaderLinkWrapper>
-        <HeaderLink to="/portfolio">Projects</HeaderLink>
+        <HeaderLink to="/actions">Actions</HeaderLink>
       </HeaderLinkWrapper>
       <HeaderLinkWrapper>
         <HeaderLink to="/thoughts">Thoughts</HeaderLink>
       </HeaderLinkWrapper>
+      <HeaderLinkWrapper>
+        <HeaderLink to="/experiences">Experiences</HeaderLink>
+      </HeaderLinkWrapper>
     </Div2>
     <Div3>
-      <SocialIcons href="https://github.com/caldayham" target="_blank">
-        <AiFillGithub size="30px" />
-      </SocialIcons>
+      <HeaderLinkWrapper width={40}>
+        <SocialIcons href="https://github.com/caldayham" target="_blank">
+          <AiFillGithub size="30px" />
+        </SocialIcons>
+      </HeaderLinkWrapper>
+      <HeaderLinkWrapper width={40}>
       <SocialIcons
         href="https://www.linkedin.com/in/caldayham/"
         target="_blank"
       >
         <AiFillLinkedin size="30px" />
       </SocialIcons>
+      </HeaderLinkWrapper>
+      <HeaderLinkWrapper width={40}>
       <SocialIcons href="https://www.ledges.io/" target="_blank">
-        <LedgesSVG size="30px" />
+        <LedgesSVG size="26px" />
       </SocialIcons>
+      </HeaderLinkWrapper>
+      <HeaderLinkWrapper width={40}>
       <SocialIcons href="https://www.printscientific.com/" target="_blank">
-        <PrintSciSVG size="30px" />
+        <PrintSciSVG size="26px" />
       </SocialIcons>
+      </HeaderLinkWrapper>
     </Div3>
   </Container>
 );
