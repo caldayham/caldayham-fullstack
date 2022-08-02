@@ -11,4 +11,18 @@ const PrimaryLink = styled(Link)`
   text-decoration: none;
 `;
 
-export { PrimaryContainer, PrimaryLink };
+const CommandLineInput = styled.input`
+position: fixed;
+bottom: 20%;
+width: 100%;
+height: 50px;
+border: 2px solid rgb(100,100,100);
+background-color: rgb(40,40,40);
+color: white;
+
+&:focus{
+outline: none;
+}
+`;
+
+export { PrimaryContainer, PrimaryLink, CommandLineInput };

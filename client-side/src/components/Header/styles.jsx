@@ -36,7 +36,6 @@ export const HeaderLink = styled(Link)`
   align-items: center;
   justify-content: center;
   background-color: rgba(14, 14, 14);
-  flex: 1;
   height: 40px;
   border-radius: 10px;
   font-size: 22px;
@@ -50,7 +49,12 @@ export const HeaderLink = styled(Link)`
 `;
 
 export const HeaderLinkWrapper = styled.div`
-  width: ${(props) => props.width? `${String(props.width) + "px"}` : "200px"};
+flex: 1;
+
+transition: all 0.2s ease;
+&:hover{
+  flex: 1.1;
+}
 `;
 
 export const Div1 = styled.div`
@@ -64,6 +68,7 @@ export const Div2 = styled.div`
   flex: 3;
   display: flex;
   align-items: center;
+  gap: 10px
 `;
 export const Div3 = styled.div`
   display: flex;
@@ -71,6 +76,7 @@ export const Div3 = styled.div`
   align-items: center;
   flex: 1;
   padding-right: 20px;
+  padding-left: 40px;
 `;
 
 /// DropDown Contact
@@ -89,7 +95,7 @@ export const ContactDropDown = styled.button`
 // Social Icons
 
 export const SocialIcons = styled.a`
-display: flex;
+  display: flex;
   color: white;
   width: 30px;
   align-items: center;

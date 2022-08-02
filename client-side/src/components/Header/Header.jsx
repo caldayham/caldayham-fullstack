@@ -36,29 +36,31 @@ const Header = () => (
       </HeaderLinkWrapper>
     </Div2>
     <Div3>
-      <HeaderLinkWrapper width={40}>
+      <div style={{display: "flex"}}>
+      <HeaderLinkWrapper>
         <SocialIcons href="https://github.com/caldayham" target="_blank">
           <AiFillGithub size="30px" />
         </SocialIcons>
       </HeaderLinkWrapper>
-      <HeaderLinkWrapper width={40}>
+      <HeaderLinkWrapper>
       <SocialIcons
         href="https://www.linkedin.com/in/caldayham/"
         target="_blank"
-      >
+        >
         <AiFillLinkedin size="30px" />
       </SocialIcons>
       </HeaderLinkWrapper>
-      <HeaderLinkWrapper width={40}>
+      <HeaderLinkWrapper>
       <SocialIcons href="https://www.ledges.io/" target="_blank">
         <LedgesSVG size="26px" />
       </SocialIcons>
       </HeaderLinkWrapper>
-      <HeaderLinkWrapper width={40}>
+      <HeaderLinkWrapper>
       <SocialIcons href="https://www.printscientific.com/" target="_blank">
         <PrintSciSVG size="26px" />
       </SocialIcons>
       </HeaderLinkWrapper>
+        </div>
     </Div3>
   </Container>
 );

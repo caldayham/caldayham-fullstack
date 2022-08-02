@@ -4,6 +4,8 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./pages/HomePage";
+import CousinPage from "./pages/CousinPage";
+
 import Page404 from "./pages/Page404";
 
 const App = () => {
@@ -19,6 +21,7 @@ const App = () => {
           <Route exact path="/about" element={<HomePage />} />
           <Route exact path="/projects" element={<HomePage />} />
           <Route exact path="/thoughts" element={<HomePage />} />
+          <Route exact path="/cousins" element={<CousinPage />} />
 
           <Route exact path="/*" element={<Page404 />} />
         </Routes>
