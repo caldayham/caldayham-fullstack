@@ -10,7 +10,7 @@ const PrintSciSVG = (props) => {
       <polygon
         className="st0"
         points="324,0 117,117 117,234 270,324 117,414 117,531 324,648 531,531 531,414 378,324 531,234 531,117 "
-        fill="#ffffff"
+        fill={`rgb(${props.fill}, ${props.fill}, ${props.fill}`}
       />
     </svg>
   );

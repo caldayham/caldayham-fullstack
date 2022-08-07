@@ -4,10 +4,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   background: rgb(0, 0, 0);
   display: flex;
-  border-bottom: 1px solid rgb(40,40,40);
-
+  border-bottom: 1px solid rgb(40, 40, 40);
 
   height: 80px;
+
+  gap: 10px;
 `;
 
 export const LogoLink = styled(Link)`
@@ -18,19 +19,17 @@ export const LogoLink = styled(Link)`
   height: 50px;
   border-radius: 10px;
   font-size: 22px;
-  color: white;
+  color: rgb(200, 200, 200);
   text-decoration: none;
 
   transition: all 0.2s ease;
   &:hover {
-    width: 210px;
-    height: 60px;
+    color: rgb(255 255 255);
   }
 `;
 
 export const HeaderLink = styled(Link)`
-  border: 1px solid rgb(40,40,40);
-
+  border: 1px solid rgb(40, 40, 40);
 
   display: flex;
   align-items: center;
@@ -39,22 +38,44 @@ export const HeaderLink = styled(Link)`
   height: 40px;
   border-radius: 10px;
   font-size: 22px;
-  color: white;
+  color: rgb(200, 200, 200);
   text-decoration: none;
+  min-width: 180px;
 
   transition: all 0.2s ease;
   &:hover {
-    flex: 1.1;
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+  }
+`;
+
+export const HeaderBox = styled.div`
+  border: 1px solid rgb(40, 40, 40);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(14, 14, 14);
+  height: 40px;
+  border-radius: 10px;
+  font-size: 22px;
+  color: rgb(200, 200, 200);
+  text-decoration: none;
+  min-width: 180px;
+
+  transition: all 0.2s ease;
+  &:hover {
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
   }
 `;
 
 export const HeaderLinkWrapper = styled.div`
-flex: 1;
+  flex: 1;
 
-transition: all 0.2s ease;
-&:hover{
-  flex: 1.1;
-}
+  transition: all 0.2s ease;
+  &:hover {
+  }
 `;
 
 export const Div1 = styled.div`
@@ -62,21 +83,21 @@ export const Div1 = styled.div`
   display: flex;
   align-items: center;
 
-  margin-left: 20px;
+  padding-left: 20px;
 `;
 export const Div2 = styled.div`
   flex: 3;
   display: flex;
   align-items: center;
-  gap: 10px
+  gap: 10px;
 `;
 export const Div3 = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
   flex: 1;
+
   padding-right: 20px;
-  padding-left: 40px;
 `;
 
 /// DropDown Contact
@@ -96,20 +117,20 @@ export const ContactDropDown = styled.button`
 
 export const SocialIcons = styled.a`
   display: flex;
-  color: white;
+  color: rgb(200, 200, 200);
   width: 30px;
   align-items: center;
   justify-content: center;
 
   transition: all 0.1s ease;
   &:hover {
-    width: 40px;
     cursor: pointer;
+    color: rgb(255, 255, 255);
   }
 `;
 
 export const MenuWrapper = styled.div`
-display: flex;
-flex-direction: column;
-padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 `;

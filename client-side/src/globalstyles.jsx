@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const PrimaryContainer = styled.div`
   height: calc(100vh - 80px);
+  padding: 20px;
 `;
 
 const PrimaryLink = styled(Link)`
@@ -11,18 +12,19 @@ const PrimaryLink = styled(Link)`
   text-decoration: none;
 `;
 
-const CommandLineInput = styled.input`
-position: fixed;
-bottom: 20%;
-width: 100%;
-height: 50px;
-border: 2px solid rgb(100,100,100);
-background-color: rgb(40,40,40);
-color: white;
+const CommandLineInput = styled.textarea`
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  height: 200px;
+  border: 2px solid rgb(100, 100, 100);
+  background-color: rgb(40, 40, 40);
+  color: white;
+  resize: none;
 
-&:focus{
-outline: none;
-}
+  &:focus {
+    outline: none;
+  }
 `;
 
 export { PrimaryContainer, PrimaryLink, CommandLineInput };
