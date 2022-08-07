@@ -4,6 +4,7 @@ import styled from "styled-components";
 const PrimaryContainer = styled.div`
   height: calc(100vh - 80px);
   padding: 20px;
+  margin-top: 80px;
 `;
 
 const PrimaryLink = styled(Link)`

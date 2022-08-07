@@ -13,8 +13,9 @@ import {
 } from "./styles";
 
 import LedgesSVG from "../../local-assets/ledges-svg";
-import CalDayHamLogo from "../../local-assets/caldayham-logo";
+import CalDayHamLogo from "../../local-assets/caldayham-logo2";
 import PrintSciSVG from "../../local-assets/printsci-svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [logoFill, setLogoFill] = useState(200);
@@ -50,6 +51,16 @@ const Header = () => {
       </Div2>
       <Div3>
         <HeaderBox>
+          <Link
+            to="/contact"
+            style={{
+              zIndex: "1",
+              width: "200px",
+              height: "40px",
+              position: "absolute",
+            }}
+          />
+
           <SocialIcons href="https://github.com/caldayham" target="_blank">
             <AiFillGithub size="30px" />
           </SocialIcons>

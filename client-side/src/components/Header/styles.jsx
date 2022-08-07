@@ -5,6 +5,9 @@ export const Container = styled.div`
   background: rgb(0, 0, 0);
   display: flex;
   border-bottom: 1px solid rgb(40, 40, 40);
+  position: fixed;
+  top: 0px;
+  width: 100%;
 
   height: 80px;
 
@@ -40,7 +43,7 @@ export const HeaderLink = styled(Link)`
   font-size: 22px;
   color: rgb(200, 200, 200);
   text-decoration: none;
-  min-width: 180px;
+  min-width: 200px;
 
   transition: all 0.2s ease;
   &:hover {
@@ -61,7 +64,7 @@ export const HeaderBox = styled.div`
   font-size: 22px;
   color: rgb(200, 200, 200);
   text-decoration: none;
-  min-width: 180px;
+  min-width: 200px;
 
   transition: all 0.2s ease;
   &:hover {
@@ -86,7 +89,7 @@ export const Div1 = styled.div`
   padding-left: 20px;
 `;
 export const Div2 = styled.div`
-  flex: 3;
+  flex: 2;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -121,6 +124,7 @@ export const SocialIcons = styled.a`
   width: 30px;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 
   transition: all 0.1s ease;
   &:hover {
