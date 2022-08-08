@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 import {
@@ -17,10 +17,43 @@ import CalDayHamLogo from "../../local-assets/caldayham-logo2";
 import PrintSciSVG from "../../local-assets/printsci-svg";
 import { Link } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
 const Header = () => {
-  const [logoFill, setLogoFill] = useState(200);
-  const [ledgesFill, setLedgesFill] = useState(200);
-  const [printFill, setPrintFill] = useState(200);
+  const [logoFill, setLogoFill] = useState(220);
+  const [onLogo, setOnLogo] = useState(false);
+
+  const [ledgesFill, setLedgesFill] = useState(220);
+  const [printFill, setPrintFill] = useState(220);
+  const currentPage = useSelector((state) => state.currentPage.page);
+
+  useEffect(() => {
+    const pageInit = () => {
+      if (currentPage === "home") {
+        setLogoFill(255);
+      } else if (!onLogo) {
+        setLogoFill(220);
+      } else if (onLogo) {
+        setLogoFill(255);
+      } else {
+        setLogoFill(220);
+      }
+    };
+    pageInit();
+  });
+
+  const updateLogoFill = (action) => {
+    if (action === "enter") {
+      setLogoFill(255);
+      setOnLogo(true);
+    } else if (action === "leave" && currentPage !== "home") {
+      setLogoFill(220);
+      setOnLogo(false);
+    } else if (action === "leave" && currentPage === "home") {
+      setLogoFill(255);
+      setOnLogo(false);
+    }
+  };
 
   return (
     <Container>
@@ -28,8 +61,9 @@ const Header = () => {
         <HeaderLink
           to="/home"
           style={{ backgroundColor: "none" }}
-          onMouseEnter={() => setLogoFill(255)}
-          onMouseLeave={() => setLogoFill(200)}
+          onMouseEnter={() => updateLogoFill("enter")}
+          onMouseLeave={() => updateLogoFill("leave")}
+          thispage="home"
         >
           <CalDayHamLogo
             scaleFactor="1.8"
@@ -40,17 +74,23 @@ const Header = () => {
       </Div1>
       <Div2>
         <HeaderLinkWrapper>
-          <HeaderLink to="/actions">Actions</HeaderLink>
+          <HeaderLink to="/actions" thispage="actions">
+            Actions
+          </HeaderLink>
         </HeaderLinkWrapper>
         <HeaderLinkWrapper>
-          <HeaderLink to="/thoughts">Thoughts</HeaderLink>
+          <HeaderLink to="/thoughts" thispage="thoughts">
+            Thoughts
+          </HeaderLink>
         </HeaderLinkWrapper>
         <HeaderLinkWrapper>
-          <HeaderLink to="/experiences">Experiences</HeaderLink>
+          <HeaderLink to="/experiences" thispage="experiences">
+            Experiences
+          </HeaderLink>
         </HeaderLinkWrapper>
       </Div2>
       <Div3>
-        <HeaderBox>
+        <HeaderBox thispage="contact">
           <Link
             to="/contact"
             style={{
@@ -74,7 +114,7 @@ const Header = () => {
             href="https://www.ledges.io/"
             target="_blank"
             onMouseEnter={() => setLedgesFill(255)}
-            onMouseLeave={() => setLedgesFill(200)}
+            onMouseLeave={() => setLedgesFill(220)}
           >
             <LedgesSVG size="26px" fill={ledgesFill} />
           </SocialIcons>
@@ -82,7 +122,7 @@ const Header = () => {
             href="https://www.printscientific.com/"
             target="_blank"
             onMouseEnter={() => setPrintFill(255)}
-            onMouseLeave={() => setPrintFill(200)}
+            onMouseLeave={() => setPrintFill(220)}
           >
             <PrintSciSVG size="26px" fill={printFill} />
           </SocialIcons>

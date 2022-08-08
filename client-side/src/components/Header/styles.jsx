@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 export const Container = styled.div`
   background: rgb(0, 0, 0);
@@ -8,31 +9,20 @@ export const Container = styled.div`
   position: fixed;
   top: 0px;
   width: 100%;
-
   height: 80px;
 
   gap: 10px;
 `;
 
-export const LogoLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-  font-size: 22px;
-  color: rgb(200, 200, 200);
-  text-decoration: none;
-
-  transition: all 0.2s ease;
-  &:hover {
-    color: rgb(255 255 255);
-  }
-`;
-
 export const HeaderLink = styled(Link)`
-  border: 1px solid rgb(40, 40, 40);
+  border: ${(props) =>
+    useSelector((state) => state.currentPage.page) === props.thispage
+      ? "1px solid rgb(255, 255, 255)"
+      : "1px solid rgb(40, 40, 40)"};
+  color: ${(props) =>
+    useSelector((state) => state.currentPage.page) === props.thispage
+      ? "rgb(255, 255, 255)"
+      : "rgb(200, 200, 200)"};
 
   display: flex;
   align-items: center;
@@ -41,7 +31,6 @@ export const HeaderLink = styled(Link)`
   height: 40px;
   border-radius: 10px;
   font-size: 22px;
-  color: rgb(200, 200, 200);
   text-decoration: none;
   min-width: 200px;
 
@@ -53,7 +42,14 @@ export const HeaderLink = styled(Link)`
 `;
 
 export const HeaderBox = styled.div`
-  border: 1px solid rgb(40, 40, 40);
+  border: ${(props) =>
+    useSelector((state) => state.currentPage.page) === props.thispage
+      ? "1px solid rgb(255, 255, 255)"
+      : "1px solid rgb(40, 40, 40)"};
+  color: ${(props) =>
+    useSelector((state) => state.currentPage.page) === props.thispage
+      ? "rgb(255, 255, 255)"
+      : "rgb(200, 200, 200)"};
 
   display: flex;
   align-items: center;
@@ -62,7 +58,6 @@ export const HeaderBox = styled.div`
   height: 40px;
   border-radius: 10px;
   font-size: 22px;
-  color: rgb(200, 200, 200);
   text-decoration: none;
   min-width: 200px;
 
