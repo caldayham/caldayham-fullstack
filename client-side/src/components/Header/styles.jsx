@@ -32,7 +32,9 @@ export const HeaderLink = styled(Link)`
   border-radius: 10px;
   font-size: 22px;
   text-decoration: none;
-  min-width: 200px;
+
+  min-width: ${(props) => (props.type === "square" ? "40px" : "200px")};
+  flex: ${(props) => (props.type === "square" ? "null" : "1")};
 
   transition: all 0.2s ease;
   &:hover {
@@ -60,19 +62,12 @@ export const HeaderBox = styled.div`
   font-size: 22px;
   text-decoration: none;
   min-width: 200px;
+  flex: 1;
 
   transition: all 0.2s ease;
   &:hover {
     border: 1px solid rgb(255, 255, 255);
     color: rgb(255, 255, 255);
-  }
-`;
-
-export const HeaderLinkWrapper = styled.div`
-  flex: 1;
-
-  transition: all 0.2s ease;
-  &:hover {
   }
 `;
 

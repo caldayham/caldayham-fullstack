@@ -14,7 +14,13 @@ const ThoughtsPage = () => {
 
   return (
     <PrimaryContainer>
-      <h1>Cal Day Ham's Thoughts</h1>
+      <h1>Thoughts</h1>
+      <p style={{ lineHeight: "30px", paddingTop: "40px" }}>
+        "Thoughts" are very similar to "actions" but they never come to
+        fruition, sometimes they don't even need an actionable component.
+        <br /> Every action is born from a thought.
+        <br /> Every thought is born from an experience.
+      </p>
     </PrimaryContainer>
   );
 };

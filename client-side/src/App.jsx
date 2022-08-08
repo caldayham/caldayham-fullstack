@@ -11,6 +11,7 @@ import ContactPage from "./pages/ContactPage";
 
 import Page404 from "./pages/Page404";
 import { CommandLineInput } from "./globalstyles";
+import LibraryPage from "./pages/LibraryPage";
 
 const App = () => {
   const [showingCmdLn, toggleShowingCmdLn] = useState(false);
@@ -27,6 +28,7 @@ const App = () => {
           <Route exact path="/actions" element={<ActionsPage />} />
           <Route exact path="/thoughts" element={<ThoughtsPage />} />
           <Route exact path="/experiences" element={<ExperiencesPage />} />
+          <Route exact path="/library" element={<LibraryPage />} />
           <Route exact path="/contact" element={<ContactPage />} />
 
           <Route exact path="/*" element={<Page404 />} />

@@ -7,7 +7,6 @@ import {
   Div2,
   Div3,
   HeaderLink,
-  HeaderLinkWrapper,
   SocialIcons,
   HeaderBox,
 } from "./styles";
@@ -16,6 +15,7 @@ import LedgesSVG from "../../local-assets/ledges-svg";
 import CalDayHamLogo from "../../local-assets/caldayham-logo2";
 import PrintSciSVG from "../../local-assets/printsci-svg";
 import { Link } from "react-router-dom";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 
 import { useSelector } from "react-redux";
 
@@ -71,25 +71,25 @@ const Header = () => {
             fill={logoFill}
           />
         </HeaderLink>
+        <div style={{ flex: 1 }} />
       </Div1>
       <Div2>
-        <HeaderLinkWrapper>
-          <HeaderLink to="/actions" thispage="actions">
-            Actions
-          </HeaderLink>
-        </HeaderLinkWrapper>
-        <HeaderLinkWrapper>
-          <HeaderLink to="/thoughts" thispage="thoughts">
-            Thoughts
-          </HeaderLink>
-        </HeaderLinkWrapper>
-        <HeaderLinkWrapper>
-          <HeaderLink to="/experiences" thispage="experiences">
-            Experiences
-          </HeaderLink>
-        </HeaderLinkWrapper>
+        <HeaderLink to="/actions" thispage="actions">
+          Actions
+        </HeaderLink>
+        <HeaderLink to="/thoughts" thispage="thoughts">
+          Thoughts
+        </HeaderLink>
+        <HeaderLink to="/experiences" thispage="experiences">
+          Experiences
+        </HeaderLink>
+        <HeaderLink to="/library" thispage="library" type="square">
+          <AutoStoriesIcon />
+        </HeaderLink>
       </Div2>
       <Div3>
+        <div style={{ flex: 1 }} />
+
         <HeaderBox thispage="contact">
           <Link
             to="/contact"
