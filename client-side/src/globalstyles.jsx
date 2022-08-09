@@ -28,4 +28,57 @@ const CommandLineInput = styled.textarea`
   }
 `;
 
-export { PrimaryContainer, PrimaryLink, CommandLineInput };
+const ToggleCollapse = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: left;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(200, 200, 200);
+  border: 1px solid rgb(40, 40, 40);
+  margin-top: 20px;
+  max-width: ${(props) => (props.open ? "800px" : "200px")};
+  height: ${(props) => (props.open ? `${props.height}` : "40px")};
+
+  overflow: hidden;
+
+  transition: all 0.2s ease;
+  &:hover {
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+`;
+
+const ToggleCollapseTitle = styled.h1`
+  font-size: 22px;
+  font-weight: 200;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  transition: all 0.2s ease;
+  border-bottom: ${(props) =>
+    props.open ? "1px solid rgb(40, 40, 40)" : "none"};
+`;
+
+const ToggleCollapseBody = styled.div`
+  padding-left: 10px;
+`;
+
+export {
+  PrimaryContainer,
+  PrimaryLink,
+  CommandLineInput,
+  ToggleCollapse,
+  ToggleCollapseTitle,
+  ToggleCollapseBody,
+};
