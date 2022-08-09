@@ -1,6 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { PrimaryContainer } from "../globalstyles";
+import {
+  PrimaryContainer,
+  ToggleCollapse,
+  ToggleCollapseBody,
+  ToggleCollapseTitle,
+} from "../globalstyles";
 import { changePage } from "../redux/currentPageRedux";
 
 const ThoughtsPage = () => {
@@ -12,15 +17,26 @@ const ThoughtsPage = () => {
     updatePage();
   });
 
+  const [open, setOpen] = useState(false);
+
   return (
     <PrimaryContainer>
       <h1>Thoughts</h1>
-      <p style={{ lineHeight: "30px", paddingTop: "40px" }}>
-        "Thoughts" are very similar to "actions" but they never come to
-        fruition, sometimes they don't even need an actionable component.
-        <br /> Every action is born from a thought.
-        <br /> Every thought is born from an experience.
-      </p>
+      <ToggleCollapse
+        onClick={() => setOpen((prev) => !prev)}
+        open={open}
+        height="200px"
+      >
+        <ToggleCollapseTitle open={open}>Page Thoughts</ToggleCollapseTitle>
+        <ToggleCollapseBody>
+          <p style={{ lineHeight: "30px", paddingTop: "20px" }}>
+            "Thoughts" are very similar to "actions" but they never come to
+            fruition, sometimes they don't even need an actionable component.
+            <br /> Every action is born from a thought.
+            <br /> Every thought is born from an experience.
+          </p>
+        </ToggleCollapseBody>
+      </ToggleCollapse>
     </PrimaryContainer>
   );
 };

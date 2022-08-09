@@ -74,6 +74,21 @@ const ToggleCollapseBody = styled.div`
   padding-left: 10px;
 `;
 
+const SubTitle = styled.h1`
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 200;
+  color: rgb(255, 255, 255);
+`;
+
+const PageDivider = styled.div`
+  width: calc(100% + 40px);
+  border-bottom: 1px solid rgb(40, 40, 40);
+  height: 20px;
+
+  margin: 0px 0px 0px -20px;
+`;
+
 export {
   PrimaryContainer,
   PrimaryLink,
@@ -81,4 +96,6 @@ export {
   ToggleCollapse,
   ToggleCollapseTitle,
   ToggleCollapseBody,
+  SubTitle,
+  PageDivider,
 };
